@@ -5,7 +5,7 @@ using UnityEngine;
 public class SpaceShip : MonoBehaviour
 {
     public float RotationRatio = 5f;
-    public float MoveSpeed = 10f;
+    public float MoveSpeed = 1f;
     
     public Vector3 direction = new Vector3(0,0,1);
     
