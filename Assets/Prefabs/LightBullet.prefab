@@ -134,4 +134,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MoveSpeed: 10
-  ThisRigidBody: {fileID: 4859498678905309126}
+  MINIMUM_SPEED_THRESHOLD: 3
