@@ -6,11 +6,12 @@ public class PlayerSpaceshipController : AsteroidGameObject
 {
     public float RotationRatio = 3f;
     public float MoveSpeed = 1f;
-    
-    public Vector3 direction = new Vector3(0,0,1);
-    
+
     private Transform transformRef = null;
-    private Rigidbody2D rigidBodyRef = null;
+    private Rigidbody2D rigidBody = null;
+
+    private SpaceshipVelocityManager velocityManager;
+
 
     void Start()
     {
@@ -18,22 +19,24 @@ public class PlayerSpaceshipController : AsteroidGameObject
         Assert.IsTrue(MoveSpeed != 0.0);
 
         transformRef = gameObject.GetComponent<Transform>();
-        rigidBodyRef = gameObject.GetComponent<Rigidbody2D>();
+        rigidBody = gameObject.GetComponent<Rigidbody2D>();
+        velocityManager = GetComponent<SpaceshipVelocityManager>();
     }
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.UpArrow))
+        if (Input.GetKey(KeyCode.UpArrow) &&
+            velocityManager.IsThrustEnabled)
         {
-            rigidBodyRef.velocity = transformRef.up * MoveSpeed;
+            rigidBody.AddForce(transformRef.up * MoveSpeed);
         }
         if (Input.GetKey(KeyCode.LeftArrow))
         {
-            RotateBy(-RotationRatio);
+            RotateBy(RotationRatio);
         }
         if (Input.GetKey(KeyCode.RightArrow))
         {
-            RotateBy(RotationRatio);
+            RotateBy(-RotationRatio);
         }
     }
 
