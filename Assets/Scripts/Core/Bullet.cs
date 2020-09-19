@@ -1,8 +1,7 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using Assets.Scripts.Core;
 using UnityEngine;
 
-public class Bullet : MonoBehaviour
+public class Bullet : AsteroidGameObject
 {
     public float MoveSpeed = 10;
     public Rigidbody2D ThisRigidBody;
@@ -15,7 +14,6 @@ public class Bullet : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log(collision.gameObject.name);
         Destroy(gameObject);    
     }
 }

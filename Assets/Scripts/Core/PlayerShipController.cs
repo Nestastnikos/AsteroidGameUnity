@@ -1,26 +1,27 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using Assets.Scripts.Core;
 using UnityEngine;
 
-public class SpaceShip : MonoBehaviour
+public class PlayerShipController : MonoBehaviour
 {
     public float RotationRatio = 5f;
-    public float MoveSpeed = 1f;
+    public float MoveSpeed = 5f;
     
     public Vector3 direction = new Vector3(0,0,1);
     
     private Transform transformRef = null;
+    private Rigidbody2D rigidBodyRef = null;
 
     void Start()
     {
         transformRef = gameObject.GetComponent<Transform>();
+        rigidBodyRef = gameObject.GetComponent<Rigidbody2D>();
     }
 
     void Update()
     {
         if (Input.GetKey(KeyCode.UpArrow))
         {
-            transformRef.position += transformRef.up * MoveSpeed * Time.deltaTime;
+            rigidBodyRef.velocity = transformRef.up * MoveSpeed;
         }
         if (Input.GetKey(KeyCode.LeftArrow))
         {
@@ -32,10 +33,5 @@ public class SpaceShip : MonoBehaviour
             direction = Quaternion.Euler(0, 0, RotationRatio) * direction;
             transformRef.Rotate(direction);
         }
-    }
-
-    private void RotateBy(float angles)
-    {
-        
     }
 }
