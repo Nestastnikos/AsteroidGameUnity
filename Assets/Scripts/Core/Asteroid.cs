@@ -8,8 +8,6 @@ public class Asteroid : AsteroidGameObject, IKillable
     public GameObject SmallerAsteroidPrefab = null;
     public float MaxMoveSpeed;
 
-    private Vector3 direction = new Vector3(0, 0, 1);
-
     void Start()
     {
         Assert.IsTrue(MaxMoveSpeed != 0.0f);
@@ -49,13 +47,18 @@ public class Asteroid : AsteroidGameObject, IKillable
 
     private void TrySplitToTwoSmallerAsteroids()
     {
-        if(SmallerAsteroidPrefab == null)
+        if(!CanSplitToSmallerAsteroids())
         {
             return;
         }
 
         CreateAsteroidRotatedBy(90);
         CreateAsteroidRotatedBy(-90);
+    }
+
+    private bool CanSplitToSmallerAsteroids()
+    {
+        return SmallerAsteroidPrefab != null;
     }
 
     private GameObject CreateAsteroidRotatedBy(float angle)

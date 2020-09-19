@@ -7,7 +7,7 @@ namespace Assets.Scripts.Gameplay
     public class AsteroidManager : MonoBehaviour
     {
         public GameObject AsteroidPrefab;
-
+        public int AsteroidsToSpawn;
         private AsteroidFactory asteroidFactory;
 
         private void Awake()
@@ -17,9 +17,10 @@ namespace Assets.Scripts.Gameplay
 
         void Start()
         {
-            asteroidFactory.Spawn();
-            asteroidFactory.Spawn();
-            asteroidFactory.Spawn();
+            for (int i = 0; i < AsteroidsToSpawn; i++)
+            {
+                asteroidFactory.Spawn();
+            }
         }
     }
 }
