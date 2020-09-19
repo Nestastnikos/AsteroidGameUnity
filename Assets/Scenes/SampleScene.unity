@@ -131,7 +131,7 @@ GameObject:
   m_Component:
   - component: {fileID: 76075985}
   - component: {fileID: 76075986}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Firepoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -260,7 +260,7 @@ GameObject:
   - component: {fileID: 616257937}
   - component: {fileID: 616257938}
   - component: {fileID: 616257939}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -354,7 +354,7 @@ GameObject:
   - component: {fileID: 1848315013}
   - component: {fileID: 1848315011}
   - component: {fileID: 1848315012}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Ship
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -373,7 +373,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4c45b6423d90104a8b63a15d0dff11d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RotationRatio: 5
+  RotationRatio: 3
   MoveSpeed: 1
   direction: {x: 0, y: 0, z: 1}
 --- !u!50 &1848315012

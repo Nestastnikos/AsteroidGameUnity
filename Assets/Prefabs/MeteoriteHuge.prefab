@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 5619236383767093988}
   - component: {fileID: 7214820591889256647}
   - component: {fileID: -1358632843576611104}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: MeteoriteHuge
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -133,3 +133,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 03a2f03eff9e3cc428975f5932d9ee20, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  SmallerAsteroidPrefab: {fileID: 4411792754045598300}
+  MaxMoveSpeed: 1

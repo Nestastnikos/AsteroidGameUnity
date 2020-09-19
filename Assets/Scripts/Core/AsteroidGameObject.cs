@@ -14,7 +14,6 @@ namespace Assets.Scripts.Core
             var old_x = transform.position.x;
             var old_y = transform.position.y;
             transform.position = new Vector2(-old_x, -old_y);
-            Debug.Log($"{old_x} {old_y}");
         }
     }
 }
