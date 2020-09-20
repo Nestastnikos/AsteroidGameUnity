@@ -1,27 +1,29 @@
-﻿using UnityEngine;
+﻿using Assets.Scripts.Core;
+using Assets.Scripts.Gameplay;
+using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    private SpaceshipMovementManager movementManager;
+    private SpaceshipActionManager actionManager;
 
     void Start()
     {
-        movementManager = GetComponent<SpaceshipMovementManager>();
+        actionManager = GetComponent<SpaceshipActionManager>();
     }
 
     void Update()
     {
         if (Input.GetKey(KeyCode.UpArrow))
         {
-            movementManager.MoveForward();
+            actionManager.TryMoveForward();
         }
         if (Input.GetKey(KeyCode.LeftArrow))
         {
-            movementManager.TurnLeft();
+            actionManager.TryTurnLeft();
         }
         if (Input.GetKey(KeyCode.RightArrow))
         {
-            movementManager.TurnRight();
+            actionManager.TryTurnRight();
         }
     }
 }

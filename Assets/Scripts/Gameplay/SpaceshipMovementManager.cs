@@ -1,43 +1,26 @@
-﻿using UnityEngine;
+﻿using Assets.Scripts.Core;
+using UnityEngine;
 using UnityEngine.Assertions;
 
 public class SpaceshipMovementManager : MonoBehaviour
 {
     public float RotationRatio = 3f;
-
-    public float SlowingFactor = 0.95f;
     public float MoveSpeed = 1f;
-    public float MaxSpeed;
-
-    private bool IsThrustEnabled { get; set; }
 
     private Rigidbody2D rigidBody;
+    private SpaceshipState state;
 
-    // Start is called before the first frame update
     void Start()
     {
-        Assert.IsTrue(SlowingFactor != 0.0f);
-        Assert.IsTrue(MaxSpeed != 0.0f);
-        Assert.IsTrue(MoveSpeed != 0.0f);
         Assert.IsTrue(RotationRatio != 0.0);
 
         rigidBody = GetComponent<Rigidbody2D>();
-    }
-
-    private bool IsMaxSpeedExceeded()
-    {
-        return rigidBody.velocity.magnitude >= MaxSpeed;
-    }
-
-    private void FixedUpdate()
-    {
-        rigidBody.velocity = rigidBody.velocity * SlowingFactor;
-        IsThrustEnabled = !IsMaxSpeedExceeded();
+        state = GetComponent<SpaceshipState>();
     }
 
     public void MoveForward()
     {
-        if(IsThrustEnabled)
+        if(state.IsThrustEnabled)
         {
             rigidBody.AddForce(transform.up * MoveSpeed);
         }
