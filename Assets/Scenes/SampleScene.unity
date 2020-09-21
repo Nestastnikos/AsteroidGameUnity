@@ -535,7 +535,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1905018880}
-  - component: {fileID: 1905018881}
+  - component: {fileID: 1905018879}
   m_Layer: 0
   m_Name: AsteroidSpawning
   m_TagString: Untagged
@@ -543,6 +543,19 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &1905018879
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1905018878}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a02fc6516dd5f564690795de60c2e9cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  levelLayout: {fileID: 11400000, guid: d6e4dcd1ae454be47aef517188dbed69, type: 2}
 --- !u!4 &1905018880
 Transform:
   m_ObjectHideFlags: 0
@@ -557,21 +570,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1905018881
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1905018878}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fb62d68981c7d7f4c8f6aadbacd35bfa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  AsteroidPrefab: {fileID: 4411792754045598300, guid: e056acc923e0602409de80f7ffacff67,
-    type: 3}
-  AsteroidsToSpawn: 1
 --- !u!1001 &2084318189
 PrefabInstance:
   m_ObjectHideFlags: 0
