@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Assets.Scripts.Core
+namespace Assets.Scripts.Gameplay
 {
     public class OnSpaceshipBecomingInvisible : MonoBehaviour
     {
