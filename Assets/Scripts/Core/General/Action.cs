@@ -13,7 +13,6 @@ namespace Assets.Scripts.Core.General
         public void Consume()
         {
             FuelTank.Consume(ConsumeRate);
-            Debug.Log(FuelTank.CurrentAmount);
         }
 
         public Action(FuelTank fuelTank, float consumeRate)

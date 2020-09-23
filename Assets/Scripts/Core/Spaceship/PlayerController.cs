@@ -23,7 +23,6 @@ namespace Assets.Scripts.Core.Spaceship
             if(Input.GetKey(KeyCode.UpArrow))
             {
                 movementManager.TryMoveForward();
-                Debug.Log(State.FuelTank.CurrentAmount);
             }
             if(Input.GetKey(KeyCode.LeftArrow))
             {
