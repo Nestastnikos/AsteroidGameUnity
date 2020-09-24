@@ -5,7 +5,7 @@ namespace Assets.Scripts.Core.Spaceship
 {
     public class SpaceshipMovementAction : MovementAction, IMovingRestrictedAdapter
     {
-        public SpaceshipState State { get; }
+        public Spaceship State { get; }
 
         public SpaceshipMovementAction(FuelTank fuelTank, float consumeRate,
                                         IMovingRestrictedAdapter movingAdapter,

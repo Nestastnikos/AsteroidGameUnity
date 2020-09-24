@@ -11,7 +11,7 @@ namespace Assets.Scripts.Core.Spaceship
         public float MaxSpeed = 20f;
 
         public Rigidbody2D MovingBody { get; set; }
-        public SpaceshipState State { get; set; }
+        public Spaceship State { get; set; }
 
         void Start()
         {
@@ -19,7 +19,7 @@ namespace Assets.Scripts.Core.Spaceship
             Assert.IsTrue(MaxSpeed != 0.0f);
 
             MovingBody = GetComponent<Rigidbody2D>();
-            State = GetComponent<SpaceshipState>();
+            State = GetComponent<Spaceship>();
         }
 
         private bool IsMaxSpeedExceeded()

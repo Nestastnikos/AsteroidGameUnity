@@ -10,7 +10,7 @@ namespace Assets.Scripts.Gameplay.Pickups
         public float Amount = 1000;
         public override void Apply(GameObject collider)
         {
-            var fuelTank = collider.GetComponent<SpaceshipState>().FuelTank;
+            var fuelTank = collider.GetComponent<Spaceship>().FuelTank;
             fuelTank.Refill(Amount);
         }
     }

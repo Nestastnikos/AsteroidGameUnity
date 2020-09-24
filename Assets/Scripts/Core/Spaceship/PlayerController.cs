@@ -7,14 +7,14 @@ namespace Assets.Scripts.Core.Spaceship
     {
         public Rigidbody2D MovingBody { get; private set; }
 
-        public SpaceshipState State { get; private set; }
+        public Spaceship State { get; private set; }
 
         private IMovementManager movementManager;
 
         void Start()
         {
             MovingBody = GetComponent<Rigidbody2D>();
-            State = GetComponent<SpaceshipState>();
+            State = GetComponent<Spaceship>();
             movementManager = new MovementManager(this, State.FuelTank);
         }
 
