@@ -1,5 +1,6 @@
 ﻿using Assets.Scripts.Gameplay.Fuel;
 using Assets.Scripts.Interfaces;
+using System;
 using UnityEngine;
 using UnityEngine.Assertions;
 
@@ -17,6 +18,8 @@ namespace Assets.Scripts.Core.Spaceship
         private CircleCollider2D colliderRef;
 
         private int _currNumLives = 3;
+
+        public static Action OnDestroyed;
 
         private void Awake()
         {
@@ -37,6 +40,7 @@ namespace Assets.Scripts.Core.Spaceship
         {
             colliderRef.enabled = false;
             _currNumLives--;
+            OnDestroyed?.Invoke();
         }
 
         private void OnTriggerEnter2D(Collider2D collision)
