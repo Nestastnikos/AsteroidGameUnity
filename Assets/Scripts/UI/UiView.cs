@@ -8,6 +8,7 @@ public class UiView : MonoBehaviour
     [SerializeField] private GameObject lifePanel = null;
     [SerializeField] private GameObject lifePrefab = null;
 
+
     public LifePanelBehaviour LifePanelBehaviour { get; private set; }
 
     private void Awake()

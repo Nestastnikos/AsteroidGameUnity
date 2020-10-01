@@ -6,28 +6,14 @@ using UnityEngine.Assertions;
 
 namespace Assets.Scripts.Core.Spaceship
 {
-    public class Spaceship : MonoBehaviour, IKillable
+    public class SpaceshipView : MonoBehaviour, IKillable
     {
         public bool IsThrustEnabled { get; set; }
-
-        public FuelTank FuelTank { get; private set; }
-        public float StartFuelAmount = 100;
-        public float MaxFuelAmount = 1000;
 
         private PlayerRespawnAfterDeath respawner;
         private CircleCollider2D colliderRef;
 
-        private int _currNumLives = 3;
-
         public static Action OnDestroyed;
-
-        private void Awake()
-        {
-            Assert.IsTrue(StartFuelAmount <= MaxFuelAmount);
-            Assert.IsTrue(StartFuelAmount > 0);
-
-            FuelTank = new FuelTank(StartFuelAmount, MaxFuelAmount);
-        }
 
         private void Start()
         {
@@ -39,7 +25,7 @@ namespace Assets.Scripts.Core.Spaceship
         public void Die()
         {
             colliderRef.enabled = false;
-            _currNumLives--;
+            App.Models.Spaceship.CurrNumLives--;
             OnDestroyed?.Invoke();
         }
 
@@ -60,7 +46,7 @@ namespace Assets.Scripts.Core.Spaceship
 
         private void RespawnOrDestroy()
         {
-            if (_currNumLives > 0)
+            if (App.Models.Spaceship.CurrNumLives > 0)
             {
                 RespawnOnNewPosition();
             }

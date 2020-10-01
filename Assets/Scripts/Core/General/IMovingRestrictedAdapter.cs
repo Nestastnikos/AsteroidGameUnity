@@ -4,6 +4,6 @@ namespace Assets.Scripts.Core.General
 {
     public interface IMovingRestrictedAdapter : IMovingAdapter
     {
-        Spaceship.Spaceship State { get; }
+        Spaceship.SpaceshipView State { get; }
     }
 }

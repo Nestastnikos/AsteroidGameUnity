@@ -13,9 +13,7 @@ namespace Assets.Scripts.UI
             _lives = new Stack<GameObject>();
 
             FillPanelWithLifePrefabs(panel, lifePrefab, numLives);
-            Debug.Log(numLives);
-            Debug.Log(_lives.Count);
-            Spaceship.OnDestroyed += LifeDown;
+            SpaceshipView.OnDestroyed += LifeDown;
         }
 
         private void FillPanelWithLifePrefabs(GameObject panel, GameObject lifePrefab, int numLives)

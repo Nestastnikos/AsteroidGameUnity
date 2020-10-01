@@ -50,7 +50,6 @@ namespace Assets.Scripts.Gameplay.LevelManagement
         {
             Assert.IsNotNull(levelLayout);
             SpawnLevel();
-            Debug.Log("Should spawn!");
         }
     }
 }

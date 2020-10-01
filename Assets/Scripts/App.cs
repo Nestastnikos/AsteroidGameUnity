@@ -1,15 +1,14 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEditor;
+﻿using Assets.Scripts.Core;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class App : MonoBehaviour
 {
     public static UiView UiView;
+    public static Models Models;
 
-    private void Start()
+    private void Awake()
     {
-        UiView = GetComponent<UiView>();
+        UiView = GetComponentInChildren<UiView>();
+        Models = GetComponentInChildren<Models>();
     }
 }

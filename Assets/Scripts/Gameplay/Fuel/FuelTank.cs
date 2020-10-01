@@ -3,7 +3,7 @@
     public class FuelTank
     {
         public float MaxAmount { get; }
-        public float CurrentAmount { get; private set; }
+        public float CurrentAmount { get; set; }
 
         public FuelTank(float currentAmount, float maxAmount)
         {

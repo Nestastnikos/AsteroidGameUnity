@@ -7,15 +7,15 @@ namespace Assets.Scripts.Core.Spaceship
     {
         public Rigidbody2D MovingBody { get; private set; }
 
-        public Spaceship State { get; private set; }
+        public SpaceshipView State { get; private set; }
 
         private IMovementManager movementManager;
 
         void Start()
         {
             MovingBody = GetComponent<Rigidbody2D>();
-            State = GetComponent<Spaceship>();
-            movementManager = new MovementManager(this, State.FuelTank);
+            State = GetComponent<SpaceshipView>();
+            movementManager = new MovementManager(this, App.Models.Spaceship.FuelTank);
         }
 
         void Update()
